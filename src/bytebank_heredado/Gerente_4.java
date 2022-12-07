@@ -13,6 +13,7 @@ public class Gerente_4 extends Funcionario_1 {
 	
 	//Sobre-escritura de método
 	public double getBonificacion() {
+		System.out.println("Ejecutando desde gerente");
 		return super.getSalario() + super.getBonificacion();
 	}
 	
