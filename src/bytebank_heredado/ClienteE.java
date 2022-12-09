@@ -4,6 +4,11 @@ public class ClienteE implements Autenticable_14 {
 	private String documento;
 	private String telefono;
 	
+	private AutenticacionUtil_15 util;
+	
+	public ClienteE() {
+		this.util = new AutenticacionUtil_15();
+	}
 	
 	public String getNombre() {
 		return nombre;
@@ -25,13 +30,12 @@ public class ClienteE implements Autenticable_14 {
 	}
 	@Override
 	public void setClave(String clave) {
-		// TODO Auto-generated method stub
+		this.setClave(clave);
 		
 	}
 	@Override
 	public boolean iniciarSesion(String clave) {
-		// TODO Auto-generated method stub
-		return false;
+		return this.util.iniciarSesion(clave);
 	}
 	
 	

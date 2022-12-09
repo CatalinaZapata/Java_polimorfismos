@@ -1,4 +1,7 @@
 package bytebank_heredado;
+/*Tiene 2 hijos cuenta, se puede separar el cobrar comision (desetructura)
+ extend cuenta implements cobrarComision
+*/
 public abstract class CuentaA {
 	protected double saldo;
 	private int agencia = 1;
