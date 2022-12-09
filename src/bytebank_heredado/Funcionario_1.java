@@ -30,6 +30,7 @@ public abstract class Funcionario_1 {
 	}
 	
 	public abstract double getBonificacion();
+	//por ser abs no es necesario que tenga cuerpo, metodo libre
 
 	public int getTipo() {
 		return tipo;
