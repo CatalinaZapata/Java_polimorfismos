@@ -2,7 +2,7 @@ package bytebank_heredado;
 
 public class TestFuncionario_2 {
 	public static void main(String[] args) {
-		Funcionario_1 diego = new Funcionario_1();
+		Funcionario_1 diego = new Contador_8();
 		diego.setNombre("Diego");
 		diego.setDocumento("101");
 		diego.setSalario(2000);

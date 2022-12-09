@@ -1,11 +1,15 @@
 package bytebank_heredado;
-class CuentaA {
-	private double saldo;
+public abstract class CuentaA {
+	protected double saldo;
 	private int agencia = 1;
 	private int numero;
 	private ClienteE titular = new ClienteE();
 	
 	private static int total;
+	
+	public CuentaA() {
+		
+	}
 	 
 	public CuentaA(int agencia, int numero) {
 		this.agencia = agencia;
@@ -13,13 +17,9 @@ class CuentaA {
 		System.out.println("Se van creando: " + total + " cuentas.");
 		
 		CuentaA.total++;
-		
-		
 	}
 	
-	public void depositar(double valor){
-		this.saldo = this.saldo + valor;
-	}
+	public abstract void depositar(double valor);
 	
 	public boolean retirar(double valor) {
 		if (this.saldo >= valor) {
@@ -30,10 +30,19 @@ class CuentaA {
 		}
 	}
 		
-	public boolean transferir(double valor, CuentaA cuenta){
+	public boolean transferir(double valor, CuentaA destino){
+		if(this.saldo >= valor) {
+			this.saca(valor);
+			destino.depositar(valor);
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean saca(double valor) {
 		if(this.saldo >= valor) {
 			this.saldo -= valor;
-			cuenta.depositar(valor);
 			return true;
 		} else {
 			return false;
